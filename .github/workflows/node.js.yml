@@ -27,6 +27,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    - run: cd nuxt-project && npm ci
+    - run: cd nuxt-project && npm run build --if-present
+    - run: cd nuxt-project && npm test
+    - run: cd vite-project && npm ci
+    - run: cd vite-project && npm run build --if-present
+    - run: cd vite-project && npm test
